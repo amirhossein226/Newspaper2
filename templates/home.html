@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock title%}
+
+
+
+{% block content %}
+
+<div style="text-align: center;">
+    {% if user.is_authenticated %}
+
+    <h3>Hello {{ user.username }}</h3>
+    <!-- <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Logout">
+    </form> -->
+
+    {% else %}
+
+    <h5>User Navbar to <strong>Login</strong>.</h5>
+    <h5>If you don't have an account,Use <strong>Register</strong> button.</h5>
+    {% endif %}
+
+</div>
+{% endblock content %}
